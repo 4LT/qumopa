@@ -69,7 +69,8 @@ def zip_files(files):
         )
 
         for file in files:
-            zip_file.write(file)
+            full_path = Path(mod_name).joinpath(file)
+            zip_file.write(file, arcname=full_path)
 
         zip_file.close()
     except OSError:
