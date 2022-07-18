@@ -1,7 +1,6 @@
 #!/bin/env python3
 
 import glob
-import shutil
 from tkinter import messagebox
 from sys import stderr, stdin
 from pathlib import Path
