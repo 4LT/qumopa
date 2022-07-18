@@ -13,7 +13,7 @@ def_filter = [
 
     # Exclude qumopa junk
     "!qumopa.py",
-    "!_qumopa_conf.py*",
+    "!_qumopa_conf.py",
 
     # Exclude Quake junk
     "!config.cfg",
