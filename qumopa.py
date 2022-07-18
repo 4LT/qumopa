@@ -22,6 +22,7 @@ def_filter = [
     "!*.tga",
     "!*.jpg",
     "!*.jpeg",
+    "!*.png",
 
     # Exclude other junk
     "!__pycache__/**",
