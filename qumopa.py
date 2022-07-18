@@ -7,6 +7,29 @@ from sys import stderr, stdin
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
+def_filter = [
+    # Include everything
+    "**/*",
+
+    # Exclude qumopa junk
+    "!qumopa.py",
+    "!_qumopa_conf.py*",
+
+    # Exclude Quake junk
+    "!config.cfg",
+    "!*.sav",
+    "!*.dem",
+    "!*.tga",
+    "!*.jpg",
+    "!*.jpeg",
+
+    # Exclude other junk
+    "!__pycache__/**",
+
+    # Include automatic playback
+    "demo[0-9].dem",
+]
+
 def main():
     (files, error_msg) = get_paths()
 
@@ -23,16 +46,14 @@ def main():
 def get_paths():
     conf_path = Path("_qumopa_conf.py")
 
-    if not conf_path.exists():
+    if conf_path.exists():
         try:
-            shutil.copyfile("_qumopa_conf.py.def", str(conf_path))
-        except OSError:
-            return (None, "Unable to use default config")
+            from _qumopa_conf import filter as filt
+        except ImportError:    
+            return (None, "Unable to import configuration")
+    else:
+        filt = def_filter
 
-    try:
-        from _qumopa_conf import filter as filt
-    except ImportError:    
-        return (None, "Unable to import configuration")
 
     paths = set()
 
