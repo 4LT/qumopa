@@ -278,7 +278,7 @@ def zip_files(zip_file, folder, files):
             zip_file,
             mode="w",
             compression=ZIP_DEFLATED,
-            compresslevel=9
+            compresslevel=3
         )
 
         for file in files:
