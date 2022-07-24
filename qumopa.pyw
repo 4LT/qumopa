@@ -14,10 +14,6 @@ def_filter = [
     # Include everything
     "**/*",
 
-    # Exclude qumopa junk
-    "!qumopa.py",
-    "!_qumopa_conf.py",
-
     # Exclude Quake junk
     "!config.cfg",
     "!*.sav",
@@ -26,9 +22,6 @@ def_filter = [
     "!*.jpg",
     "!*.jpeg",
     "!*.png",
-
-    # Exclude other junk
-    "!__pycache__/**",
 
     # Include automatic playback
     "demo[0-9].dem",
