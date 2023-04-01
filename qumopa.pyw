@@ -16,12 +16,14 @@ def_filter = [
 
     # Exclude Quake junk
     "!config.cfg",
+    "!ironwail.cfg",
     "!*.sav",
     "!*.dem",
-    "!*.tga",
     "!*.jpg",
     "!*.jpeg",
     "!*.png",
+    "!autosave/**",
+    "!screenshots/**",
 
     # Include automatic playback
     "demo[0-9].dem",
