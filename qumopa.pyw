@@ -17,6 +17,7 @@ def_filter = [
     # Exclude Quake junk
     "!config.cfg",
     "!ironwail.cfg",
+    "!autoexec.cfg",
     "!*.sav",
     "!*.dem",
     "!*.jpg",
