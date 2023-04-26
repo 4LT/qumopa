@@ -194,7 +194,7 @@ def ask_folder(start_path):
         initialdir=start_path
     )
 
-    if folder == ():
+    if folder == () or folder == "":
         return None
     else:
         return Path(folder)
